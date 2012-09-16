@@ -133,14 +133,12 @@ if ARGV.size >= 2
 				if /#{$comma}/ =~ line
 					pline = pline + 1
 				end
-				#puts " pline : #{pline}"
 			end
 			if /#{$LS}/ =~ line
 				pflag = 1
 			end
 			# Count Track Point End
 		elsif
-			puts "Get EXILIM KML Time Data"
 			if /#{$cdata}/ =~ line
 				cline = line.scan(/[\d]+/)
 				fTm = Time.local( cline[0], cline[1], cline[2], cline[3], cline[4], cline[5])
@@ -194,6 +192,8 @@ if ARGV.size >= 2
 		iruntm = timecal( starttm, endtm )
 		interval = invalcal( pline, iruntm )
 		puts "interval : #{interval}"
+	elsif
+		puts "Get EXILIM KML Time Data"
 	end
 
 	if elog == 0
