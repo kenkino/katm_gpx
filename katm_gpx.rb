@@ -76,7 +76,7 @@ if ARGV.size >= 2
 		s = File::stat( outfile )
 	rescue
 	else
-		puts "Convert file is exist!!"
+		puts "Convert file is exist!"
 		exit!
 	end
 	outline = open( outfile, "w")
